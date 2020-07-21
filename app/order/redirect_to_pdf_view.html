@@ -1,0 +1,99 @@
+<!DOCTYPE html> <head> <title>Redirecting to page</title> <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no"> <link rel="stylesheet" type="text/css" href="https://devresume.workruit.com/assets/vendors/css/bootstrap.css" data-css="bootstrap"> <style>body {
+            margin: 0;
+            margin: 0;
+            min-height: 100vh;
+            padding: 0
+        }
+
+        .processor-loading-container {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            align-content: center;
+            text-align: center;
+            background: #fff;
+            position: fixed;
+            width: 100%;
+            z-index: 999999999999;
+            top: 0;
+            bottom: 0
+        }
+
+        .processor-loading-container .loading_supporter {
+            position: relative;
+            width: 100%
+        }
+
+        .processor-loading-container p {
+            margin: 0;
+            position: absolute;
+            width: 100%;
+            text-align: center;
+            font-size: 14px;
+            font-weight: 400;
+            font-family: sans-serif !important
+        }
+
+        canvas {
+            width: 100%;
+            box-shadow: 0px 0px 12px 0px #ccc;
+            margin-bottom: 12px;
+        }</style> </head> <body> <div class="processor-loading-container"> <div class="loading_supporter"> <svg width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg" stroke="#3EBB64"> <g fill="none" fill-rule="evenodd"> <g transform="translate(1 1)" stroke-width="2"> <circle stroke-opacity=".5" cx="18" cy="18" r="18"/> <path d="M36 18c0-9.94-8.06-18-18-18"> <animateTransform attributeName="transform" type="rotate" from="0 18 18" to="360 18 18" dur="1s" repeatCount="indefinite"/> </path> </g> </g> </svg> <p>Please wait while we are processing</p> </div> </div> <div class="resume-pdf-view"><!-- <div id="resume-error-view" class="d-none text-center">
+            <iframe src="../includes/pdf-error.html" frameborder="0" class="w-100 pdf-error"></iframe>
+        </div>
+        <div id="resume-un-available-error-view" class="d-none text-left">
+            <iframe src="" frameborder="0" class="w-100 pdf-error"></iframe>
+        </div> --> <iframe frameborder="0" id="pdfViewer" class="the-canvas mb-5 d-none"></iframe> <div id="pdfPagePreview" class="d-none"><!-- <ul class="list-inline action_buttons d-none">
+                <li class="list-inline-item zoom_in_canvas"><img src="../../assets/images/zoom-in.svg" width="20px"
+                        alt="zoom-in">
+                </li>
+                <li class="list-inline-item zoom_out_canvas"><img src="../../assets/images/zoom-out.svg" width="20px"
+                        alt="zoom-out"></li>
+                <li class="list-inline-item fit_screen"><img src="../../assets/images/fit-screen.svg" width="20px"
+                        alt="fit-screen">
+                </li>
+            </ul> --> </div> </div> <script type="text/javascript" src="../../assets/js/environment.js"></script> <script src="../../assets/vendors/js/jquery-3.3.1.min.js"></script> <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/1.10.100/pdf.min.js"></script><!-- <script type="text/javascript" src="../../assets/js/Support/RedirectToPDFViewSupport.js"></script> --> <script>setTimeout(function () {
+            previewUrl = window.location.search.split('?URL=')[1];
+            renderPdfPreview(previewUrl, document.getElementById('pdfPagePreview'));
+            $('#pdfPagePreview').removeClass('d-none');
+        }, 2000);
+        function renderPdfPreview(url, canvasContainer, options) {
+            var options = options || {
+                scale: 5
+            };
+
+            function renderPage(page) {
+                console.log({
+                    options
+                });
+                var viewport = page.getViewport(options.scale);
+                var canvas = document.createElement('canvas');
+                var ctx = canvas.getContext('2d');
+                var renderContext = {
+                    canvasContext: ctx,
+                    viewport: viewport
+                };
+                // console.log(viewport.width + 'x'+viewport.height);
+                canvas.height = viewport.height;
+                canvas.width = viewport.width;
+
+                canvasContainer.appendChild(canvas);
+
+                page.render(renderContext).then(function () {
+                    console.log("FINISHED RENDERING!");
+                    $('.processor-loading-container').css('display', 'none');
+                }, function () {
+                    console.log("ERROR");
+                });;
+            }
+
+            function renderPages(pdfDoc) {
+                for (var num = 1; num <= pdfDoc.numPages; num++)
+                    pdfDoc.getPage(num).then(renderPage);
+            }
+
+            PDFJS.disableWorker = true;
+            PDFJS.getDocument(url).then(renderPages);
+
+        }</script>

@@ -1,0 +1,36 @@
+<!DOCTYPE html> <head> <title>Generate PDF for mobile app</title> <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no"> <link rel="stylesheet" type="text/css" href="http://devresume.workruit.com/assets/vendors/css/bootstrap.css" data-css="bootstrap"> <style>body {
+            margin: 0;
+            margin: 0;
+            min-height: 100vh;
+            padding: 0
+        }
+
+        .processor-loading-container {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            align-content: center;
+            text-align: center;
+            background: #fff;
+            position: fixed;
+            width: 100%;
+            z-index: 999999999999;
+            top: 0;
+            bottom: 0
+        }
+
+        .processor-loading-container .loading_supporter {
+            position: relative;
+            width: 100%
+        }
+
+        .processor-loading-container p {
+            margin: 0;
+            position: absolute;
+            width: 100%;
+            text-align: center;
+            font-size: 14px;
+            font-weight: 400;
+            font-family: sans-serif !important
+        }</style> </head> <body> <div class="processor-loading-container"> <div class="loading_supporter"> <svg width="140" height="140" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg" stroke="#3EBB64"> <g fill="none" fill-rule="evenodd"> <g transform="translate(1 1)" stroke-width="2"> <circle stroke-opacity=".5" cx="18" cy="18" r="18"/> <path d="M36 18c0-9.94-8.06-18-18-18"> <animateTransform attributeName="transform" type="rotate" from="0 18 18" to="360 18 18" dur="1s" repeatCount="indefinite"/> </path> </g> </g> </svg> <p>Please wait while we are processing</p> </div> </div> <form method="get" action="http://127.0.0.1:5501/app/editor/pdf_process.html" name="requestPdfForm"> <input type="hidden" name="CHANNEL_ID" value="WEB"> <input type="hidden" name="SESSION_ID" value="53af513d05464c0792caa823dcddcf35"> <input type="hidden" name="USER_ID" value="6861"> <input type="hidden" name="CALLBACK_URL" value=""></form> <script type="text/javascript">document.requestPdfForm.submit();</script>

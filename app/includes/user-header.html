@@ -1,0 +1,139 @@
+<style>.img1 {
+        margin-top: -48px;
+
+    }
+
+    .button_large {
+        font-size: 1rem;
+    }
+
+    .button_w {
+        width: 65%;
+        margin-left: 18%;
+    }
+
+    .pricing_card .rupee_symbole {
+        font-size: 26px;
+        vertical-align: top;
+        margin-right: 10px;
+    }
+
+    .rupee_symbole.zero_zero {
+        font-size: 20px;
+    }
+
+    .title {
+        font-weight: bold;
+    }
+
+    .pricing .detail .title {
+        font-size: 42px;
+        font-weight: bold;
+    }
+
+    .detail {
+        height: 182px;
+    }
+
+    .pricing .detail h4 {
+        font-weight: 600 !important;
+        padding: 0;
+        line-height: 30px;
+        margin-top: 15px;
+        border: none;
+        margin-bottom: 20px;
+    }
+
+    .plan_dates {
+        font-size: 15px;
+        color: #6a6a6a;
+    }
+
+    .highlight {
+        min-height: 470px;
+        width: 310px;
+    }
+
+    .pricing .detail h4 .amount {
+        color: #3ebb64 !important;
+    }
+
+    .pricing_card .pricing {
+        margin-right: 20px;
+    }
+
+    .pricing_card .pricing:last-child {
+        margin-right: 0px;
+    }
+
+    .button_builder {
+        position: absolute;
+        bottom: 34px;
+    }
+
+    .pricing .features ul li {
+        line-height: 2.5;
+    }
+
+    .font-normal {
+        font-weight: normal;
+    }
+
+    .pointer-events {
+        pointer-events: none;
+        cursor: default;
+    }</style> <header class="w-100"> <div class="container"> <div class="row justify-content-between"> <div class="col-md-5"> <ul class="nav"> <li class="nav-item"> <a class="nav-link transition" onclick="loadPage('#/home',false,'wirw_home')">Home</a> </li> <li class="nav-item"> <a class="nav-link transition" onclick="loadPage('app/editor/index.html',true,'wirw_resume')">Resume</a> </li> <li class="nav-item"> <a class="nav-link transition" onclick="loadPage('app/dashboard/templates.html',true,'wirw_templates_db')">Templates</a> </li><!-- <li class="nav-item">
+                        <a class="nav-link transition"
+                            onclick="loadPage('app/dashboard/coverletters.html',true,'wirw_coverletter_db')">Cover
+                            Letters</a>
+                    </li> --> <li class="nav-item" id="shareNavItem"> <a class="nav-link transition">Share</a> </li> </ul> </div> <div class="col-md-2 text-center"> <a onclick="loadPage('#/home',false,'wirw_home')" target="_parent"> <img src="../../assets/images/workruit-resume-logo-color.svg" class="img-responsive resume-logo-big" alt="workruit-instent-resume"> </a> </div> <div class="col-md-5"> <ul class="nav justify-content-end"> <li> <a data-toggle="modal" data-event="wirw_upgrade" onclick="showPlansModal(this)" class="btn btn-primary upgrade-btn" id="header-upgrade-btn">Upgrade</a> </li> <li class="nav-item user dropdown" data-event="wirw_profilepic"> <a class="nav-link transition dropdown-toggle" data-toggle="dropdown" id="profileMenu" aria-haspopup="true" aria-expanded="false"> <img src="" style="border-radius: 50%" alt=""> </a> <div class="dropdown-menu" aria-labelledby="profile"> <span class="dropdown-item text-dark" id="userName"></span> <span class="dropdown-item"> <span id="UserEmail"></span> </span> <div class="dropdown-divider"></div> <a class="dropdown-item transition" onclick="loadPage('#/account',false,'wirw_account')">Account</a><!-- <a class="dropdown-item transition" href="../dashboard/notifications.html">Notifications</a> --> <a class="dropdown-item transition" onclick="loadPage('#/orders',false,'wirw_orders')">Orders</a> <a class="dropdown-item transition" data-event="wirw_downloadapp" href="javascript:void(0)" data-toggle="modal" data-target="#downloadApp">Download App</a> <a class="dropdown-item transition" data-event="signOut" href="javascript:void(0)" id="signOut">Sign Out</a> </div> </li> </ul> </div> </div> </div> </header><!-- downloadApp popup --> <div class="modal fade bd-example-modal-lg" id="downloadApp" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true"> <div class="modal-dialog modal-lg"> <div class="modal-content"> <div class="modal-header"> <button type="button" class="close" data-dismiss="modal" aria-label="Close"></button> </div> <div class="modal-body"> <div class="row"> <div class="col-md-5 text-center"> <img src="../../assets/images/app/phone.png" class="img_download" alt="phone" height="320px" width="auto"> </div> <div class="col-md-7 pt-5"> <div class="modal-title">Find the right job on the go.</div> <div class="modal-description"> Apply for jobs, chat with employers, get interview alerts. <br> All features in your pocket.</div> <div class="getapp px-4 text-center mt-3"> <span class="pr-3">Get the app</span> <a target="_blank" href="https://itunes.apple.com/in/app/workruit/id1189752813?mt=8" class="pr-2 transition"> <img src="../../assets/images/app/icons/ios-white.svg" alt="ios"> </a> <a target="_blank" class="transition" href="https://play.google.com/store/apps/details?id=com.workruit&amp;hl=en"> <img src="../../assets/images/app/icons/android-white.svg" alt="android"> </a> </div> </div> </div> </div> </div> </div> </div><!-- /downloadApp popup --><!-- upgrade popup --> <div class="modal fade bd-example-modal-lg" id="upgrade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true"> <div class="modal-dialog modal-lg"> <div class="modal-content"> <div class="modal-header"> <button type="button" class="close" data-dismiss="modal" aria-label="Close"></button> </div> <div class="modal-body"> <div class="row"> <div class="col-md-5 text-center"> <img src="../../assets/images/Icon3.svg" class="img1" alt="phone" height="320px" width="auto"> </div> <div class="col-md-7 pt-5"> <div class="modal-title">Upgrade Today</div> <div class="modal-description"> Get access to your custom resume URL and share it instantly with hiring managers, companies, friends & family.</div> <a href="../../pricing.html" target="_parent"><button type="button" class="btn btn-success btn-lg px-5 mt-3">Upgrade</button></a> </div> </div> </div> </div> </div> </div><!-- /upgrade popup --><!-- Modal --> <div class="modal fade" id="pricing-modal" tabindex="-1" role="dialog" aria-labelledby="pricing-modal" aria-hidden="true"> <div class="modal-dialog" role="document"> <div class="modal-content"> <div class="row"> <div class="col"> <h2 class="h1 pricing_plans" data-aos="fade-up">Pricing Plans</h2> <button type="button" class="close" data-dismiss="modal" aria-label="Close"></button> </div> </div> <div class="col-12"> <div class="row pricing_card pricing_template justify-content-center"> </div> </div> </div> </div> </div> <div class="modal fade bd-example-modal-lg" id="price-action-modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true"> <div class="modal-dialog modal-lg"> <div class="modal-content"> <div class="modal-header pb-0"> <button type="button" class="close close-free-plan-modal"></button> </div> <div class="modal-body py-0 mb-4"> <div class="row align-items-center"> <div class="col-md-5 text-center"> <img src="../../assets/images/Icon3.svg" class="img_download m-0" alt="phone" height="320px" width="auto"> </div> <div class="col-md-7"> <div class="modal-title"></div> <div class="modal-description"> <span class="line-1"></span> <br> <span class="line-2"></span></div> <div class="btn btn-primary px-5 btn-lg text-center mt-3 close-free-plan-modal"> Upgrade Now </div> </div> </div> </div> </div> </div> </div> <div class="modal fade bd-example-modal-lg" id="price-action-verify-modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true"> <div class="modal-dialog modal-lg"> <div class="modal-content"> <div class="modal-header pb-0"> <button type="button" class="close close-free-plan-modal"></button> </div> <div class="modal-body py-0 mb-4"> <div class="row align-items-center"> <div class="col-md-5 text-center"> <img src="../../assets/images/Icon3.svg" class="img_download m-0" alt="phone" height="320px" width="auto"> </div> <div class="col-md-7"> <div class="modal-title">Oops, Please verify your email.</div> <div class="modal-description"> You need to verify your email to make purchase, <br> Please check your registered email to verify.</div><!-- <div class="btn btn-primary px-5 btn-lg text-center mt-3 close-free-plan-modal">
+                            Upgrade Now
+                        </div> --> </div> </div> </div> </div> </div> </div> <div id="mail_message" class="alert mail_message"> <span></span> <a href="javascript:void(0)" class="close" aria-label="close" title="close"><img src="../../assets/images/app/icons/close.png" alt="close" width="10"></a> </div> <div class="notify notify-without-title notify-without-icon notify-bottom-left d-none" style="cursor: pointer" id="refreshPopUp"> <div class="notify-text"> <div class="toast-title-without-image cursor-pointer"> <div class=""><img src="../../assets/images/lamp.svg" alt="lamp" width="15px" class="mr-2"> <span class="text-black notify_title">A new version of Instant Resume is available.</span> <br> <span class="text-muted mb-2 ml-4">Refresh to get the latest version.</span> <br> <div class="d-flex justify-content-between notification_action"><span class="text-muted notify_action_type_2" onclick="hideNotification()">Later</span><button class="btn btn-default btn_sm refresh_button" onclick="reloadPage()" data-version="">Refresh</button> </div> </div> </div> </div> </div><!-- user plan info --> <style>.notify {
+        position: fixed;
+        z-index: 999999;
+        min-width: 350px;
+        max-width: 450px;
+        background-color: #fff;
+        font-size: 12px;
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        color: #494949;
+        border-radius: 4px;
+        border: 1px solid #dedede;
+        box-shadow: rgba(0, 0, 0, 0.0980392) 0px 2px 4px;
+        padding: 10px 15px 15px 15px;
+        bottom: 10px;
+        left: 10px;
+        height: 115px;
+    }
+
+    .notify.notify-without-title.notify-without-icon.notify-bottom-left {
+        min-width: auto;
+        max-width: unset;
+        border-top: 5px solid #3dbb64;
+        padding: 12px 20px;
+        left: -12px;
+    }
+
+    .text-black {
+        color: #000;
+    }
+
+    .notification_action {
+        margin-top: 0.9rem;
+    }
+
+    .notify_title {
+        font-weight: 500;
+    }
+
+    .notify_action_type_2 {
+        border-bottom: 1px dashed #777;
+        line-height: 2;
+    }
+
+    .refresh_button {
+        padding: 3px 8px;
+        font-size: 12px;
+        cursor: pointer;
+        border: solid 1px rgba(0, 0, 0, 0.2);
+    }</style> <script type="text/javascript" src="../../assets/vendors/js/cryptojs.js"></script> <script type="text/javascript" src="../../assets/vendors/js/axios.min.js"></script> <script type="text/javascript" src="../../assets/js/environment.js"></script> <script type="text/javascript" src="../../assets/js/plans.js"></script> <script type="text/javascript" src="../../assets/js/app.services.js"></script> <script type="text/javascript" src="../../assets/js/header.js"></script>
