@@ -1,0 +1,66 @@
+# Hey human,
+#
+# Workruit help robots find a job too.
+#
+# Humans can also create your resume here.
+# 
+# https://resume.workruit.com/
+#
+
+User-agent: *
+Disallow: /app/dashboard/
+Disallow: /app/editor/
+Disallow: /assets/
+
+# Allow:
+
+Sitemap: https://resume.workruit.com/sitemap.xml
+
+
+# Go away Googlebot
+User-agent: Adsbot-Google
+Disallow: /app/dashboard/
+Disallow: /app/editor/
+Disallow: /assets/
+
+# Some weird backlink checker (webmeup.com)
+User-agent: BLEXBot
+Disallow: /
+
+# Another backlink crawler
+User-agent: linkdexbot/2.0
+Disallow: /
+
+# Another one.
+User-Agent: GetintentCrawler
+Disallow: /
+
+User-agent: voltron
+Disallow: /
+
+User-agent: FeedBurner/1.0
+Disallow: /
+
+User-agent: Cliqzbot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: Mail.RU_Bot
+Disallow: /
+
+User-agent: VegeBot
+Disallow: /
+
+User-agent: Vegi bot
+Disallow: /
+
+User-agent: adbeat_bot
+Disallow: /
+
+User-agent: Jooblebot
+Disallow: /
+
+User-agent: CrazyWebCrawler-Spider
+Disallow: /
