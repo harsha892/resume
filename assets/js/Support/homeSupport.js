@@ -1,0 +1,3 @@
+/*! minified version file */
+
+$(function(){$(".info_message .close").on("click",function(){$("#info_message").css("display","none"),userInfo.planDetails.display=!1,localStorage.setItem(encrypt("userData",localStorage.getItem(btoa("sessionId_"+window.location.origin))),encrypt(JSON.stringify(userInfo),localStorage.getItem(btoa("sessionId_"+window.location.origin)))),localStorage.setItem("userData",JSON.stringify(userInfo))}),$(".account-page").paraCount(),$(window).ready(function(){var e=JSON.parse(localStorage.getItem("userPlanStatus"));console.log(e),null===localStorage.getItem("previewData")?$(".preview_btn").css("display","none"):$(".preview_btn").css("display","inline-block")})});

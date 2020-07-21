@@ -1,0 +1,3 @@
+/*! minified version file */
+
+function renderPDF(e,n,o){o=o||{scale:5};function t(e){var t=e.getViewport(o.scale),a=document.createElement("canvas"),r={canvasContext:a.getContext("2d"),viewport:t};a.height=t.height,a.width=t.width,n.appendChild(a),e.render(r).then(function(){console.log("FINISHED RENDERING!"),$(".processor-loading-container").css("display","none"),$(".processor-loading-container,.loading-container").addClass("d-none"),$("body").attr("style","overflow-y:scroll!important")},function(){console.log("ERROR")}),$(".loading-container").delay(3e3).fadeOut()}PDFJS.disableWorker=!0,PDFJS.getDocument(e).then(function(e){for(var n=1;n<=e.numPages;n++)e.getPage(n).then(t)})}

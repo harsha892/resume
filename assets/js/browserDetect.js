@@ -1,0 +1,3 @@
+/*! minified version file */
+
+var isOpera=!!window.opr&&!!opr.addons||!!window.opera||navigator.userAgent.indexOf(" OPR/")>=0,isFirefox="undefined"!=typeof InstallTrigger,isSafari=/constructor/i.test(window.HTMLElement)||"[object SafariRemoteNotification]"===(!window.safari||"undefined"!=typeof safari&&safari.pushNotification).toString(),isIE=!!document.documentMode,isEdge=!isIE&&!!window.StyleMedia,isChrome=!(!window.chrome||!window.chrome.webstore&&!window.chrome.runtime),isBlink=(isChrome||isOpera)&&!!window.CSS;console.log({isFirefox:isFirefox,isChrome:isChrome,isEdge:isEdge,isIE:isIE,isBlink:isBlink,isSafari:isSafari});
