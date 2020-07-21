@@ -1,0 +1,14 @@
+RewriteEngine on
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.html -f
+RewriteRule ^(.*)$ $1.html [NC,L]
+# RewriteCond %{HTTPS} off [OR]
+# RewriteCond %{HTTP_HOST} !^www\. [NC]
+# RewriteCond %{HTTP_HOST} ^(.*)$  [NC]
+# RewriteRule (.*) https://www.%1/$1 [R=301,L]
+#RewriteCond %{HTTPS} !=on
+#RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301,NE]
+#Redirect 301 "/blog" "https://blog.workruit.com/"
+#Redirect 301 "/signup" https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301,NE]
+#RewriteRule ^careers(/.*?)(?:\.html)?$ $1 [R=302,L]
+ErrorDocument 404 https://dev.workruit.com/404
